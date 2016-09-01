@@ -1,9 +1,14 @@
  $(document).ready(function(){
-	var h = window.innerHeight - $('nav').innerHeight()
-
+ 	var navHeight
+ 	if ($(".navbar-fixed").innerHeight()){
+ 		navHeight = $(".navbar-fixed").innerHeight() + 20
+ 	} else {
+ 		navHeight = $('nav').innerHeight()
+ 	}
+ 		
 	$('.slider').slider({
 		full_width: true,
-		height: h,
+		height: window.innerHeight - navHeight,
 		indicators: false
 	});
 
